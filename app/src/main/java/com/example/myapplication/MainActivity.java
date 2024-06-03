@@ -11,12 +11,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Находим TextView и Button по их ID
+
         TextView counterTextView = findViewById(R.id.counterTextView);
 
         clickButton = findViewById(R.id.clickButton);
 
 
+        clickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // При клике увеличиваем счетчик и обновляем текст в TextView
+                counter++;
+                counterTextView.setText(String.valueOf(counter));
 
 
-
+            }
+        });
+    }
+}
